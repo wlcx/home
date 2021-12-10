@@ -3,11 +3,31 @@
 {
   home.stateVersion = "22.05";
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  programs.git = {
-    enable = true;
-    userName = "Sam Willcocks";
-    userEmail = "sam@wlcx.cc";
+  programs = {
+    home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "Sam Willcocks";
+      userEmail = "sam@wlcx.cc";
+      aliases = {
+        st = "status";
+        co = "checkout";
+        d = "diff";
+        cim = "commit -m";
+        a = "add";
+        ap = "add -p";
+      };
+    };
+    fzf.enable = true;
+    zsh = {
+      enable = true;
+      shellAliases = {
+        g = "git";
+      };
+      prezto = {
+        enable = true;
+        prompt.theme = "giddie";
+      };
+    };
   };
 }

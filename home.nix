@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.stateVersion = "22.05";
+  home.stateVersion = "21.11";
 
   programs = {
     home-manager.enable = true;

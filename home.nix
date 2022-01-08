@@ -21,9 +21,7 @@
     fzf.enable = true;
     zsh = {
       enable = true;
-      shellAliases = {
-        g = "git";
-      };
+      shellAliases = { g = "git"; };
       prezto = {
         enable = true;
         prompt.theme = "giddie";

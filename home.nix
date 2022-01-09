@@ -51,6 +51,11 @@ in {
         enable = true;
         prompt.theme = "giddie";
       };
+      plugins = [{
+        name = "zsh-z";
+        file = "share/zsh-z/zsh-z.plugin.zsh";
+        src = pkgs.zsh-z;
+      }];
     };
   };
 }

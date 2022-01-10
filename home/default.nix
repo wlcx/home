@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let mypkgs = (import ./modules/pkgs.nix { inherit pkgs; });
+let mypkgs = (import ../modules/pkgs.nix { inherit pkgs; });
 in {
   home.packages = mypkgs.all;
   home.sessionVariables = {

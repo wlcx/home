@@ -15,6 +15,7 @@ in {
       shellAliases = {
         g = "git";
         cat = "bat";
+        vim = "nvim";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "nixos-rebuild switch --flake '.#'";
       };

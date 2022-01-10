@@ -46,6 +46,7 @@ in {
         g = "git";
         cat = "bat";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
+        nrswitch = "nixos-rebuild switch --flake '.#'";
       };
       prezto = {
         enable = true;

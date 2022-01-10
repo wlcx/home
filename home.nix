@@ -3,21 +3,21 @@
 let mypkgs = (import ./modules/pkgs.nix { inherit pkgs; });
 in {
   home.packages = mypkgs.all;
+  home.sessionVariables = {
+    "EDITOR" = "nvim";
+  };
   programs = {
     home-manager.enable = true;
 
     # Shell and env-y stuff
     zsh = {
       enable = true;
-      envExtra = ''
-        export SSH_AUTH_SOCK=/Users/sam.willcocks/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
-      '';
       shellAliases = {
         g = "git";
         cat = "bat";
         vim = "nvim";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
-        nrswitch = "nixos-rebuild switch --flake '.#'";
+        nrswitch = "sudo nixos-rebuild switch --flake '.#'";
       };
 
       plugins = [{
@@ -68,8 +68,12 @@ in {
         co = "checkout";
         d = "diff";
         dc = "diff --cached";
-        r = "rebase --autostash";
-        ri = "rebase --autostash --interactive";
+        l = "log";
+        lp = "log --patch";
+        r = "rebase";
+        rc = "rebase --continue";
+        ra = "rebase --autostash";
+        rai = "rebase --autostash --interactive";
         st = "status";
 
         gone = ''

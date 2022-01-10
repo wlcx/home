@@ -18,15 +18,23 @@ in {
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "nixos-rebuild switch --flake '.#'";
       };
-      prezto = {
-        enable = true;
-        prompt.theme = "giddie";
-      };
+
       plugins = [{
         name = "zsh-z";
         file = "share/zsh-z/zsh-z.plugin.zsh";
         src = pkgs.zsh-z;
       }];
+    };
+
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+        format = "$username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$golang$kotlin$nodejs$python$rust$terraform$nix_shell$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$status$shell$character";
+        python.format = '' [py ''${pyenv_prefix}(''${version} )(\($virtualenv\) )]($style)'';
+        nodejs.format = '' [js ($version )]($style)'';
+        git_branch.format = '' [$symbol$branch]($style)'';
+      };
     };
 
     direnv = {

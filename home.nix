@@ -5,6 +5,39 @@ in {
   home.packages = mypkgs.all;
   programs = {
     home-manager.enable = true;
+
+    # Shell and env-y stuff
+    zsh = {
+      enable = true;
+      envExtra = ''
+        export SSH_AUTH_SOCK=/Users/sam.willcocks/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
+      '';
+      shellAliases = {
+        g = "git";
+        cat = "bat";
+        hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
+        nrswitch = "nixos-rebuild switch --flake '.#'";
+      };
+      prezto = {
+        enable = true;
+        prompt.theme = "giddie";
+      };
+      plugins = [{
+        name = "zsh-z";
+        file = "share/zsh-z/zsh-z.plugin.zsh";
+        src = pkgs.zsh-z;
+      }];
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+      nix-direnv.enableFlakes = true;
+    };
+
+    fzf.enable = true;
+
+    # Tools
     git = {
       enable = true;
       userName = "Sam Willcocks";
@@ -38,25 +71,6 @@ in {
         push.default = "current";
         include.path = "~/.gitconfig.local";
       };
-    };
-    fzf.enable = true;
-    zsh = {
-      enable = true;
-      shellAliases = {
-        g = "git";
-        cat = "bat";
-        hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
-        nrswitch = "nixos-rebuild switch --flake '.#'";
-      };
-      prezto = {
-        enable = true;
-        prompt.theme = "giddie";
-      };
-      plugins = [{
-        name = "zsh-z";
-        file = "share/zsh-z/zsh-z.plugin.zsh";
-        src = pkgs.zsh-z;
-      }];
     };
   };
 }

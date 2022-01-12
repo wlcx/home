@@ -13,6 +13,7 @@
       a = "add";
       ap = "add -p";
       c = "commit";
+      ca = "commit --amend";
       can = "commit --amend --no-edit";
       cm = "commit -m";
       co = "checkout";

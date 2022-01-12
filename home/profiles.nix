@@ -1,1 +1,1 @@
-{ dev = { ... }: { imports = [ ./default.nix ./git.nix ./macs.nix ]; }; }
+{ dev = { ... }: { imports = [ ./default.nix ./git.nix ./macs.nix ./rust.nix ]; }; }

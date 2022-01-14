@@ -35,7 +35,10 @@
       branch.sort = "-committerdate";
       log.showSignature = true;
       push.default = "current";
-      include.path = "~/.gitconfig.local";
     };
+    includes = [
+      { path = "~/.gitconfig.local"; }
+      { path = "~/.gitconfig.work"; condition = "gitdir:~/work/"; }
+    ];
   };
 }

@@ -44,6 +44,7 @@ in {
         git_branch.format = "[$symbol$branch]($style) ";
         python.format = "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
         nodejs.format = "[js ($version )]($style)";
+        nix_shell.format = "[nix $state( \\($name\\))]($style) ";
       };
     };
 

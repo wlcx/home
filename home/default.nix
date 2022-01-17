@@ -4,8 +4,9 @@ let mypkgs = (import ../modules/pkgs.nix { inherit pkgs; });
 in {
   home.packages = mypkgs.all;
   home.sessionVariables = {
+    "PATH" = "$HOME/.local/bin:$PATH";
     "EDITOR" = "vim";
-    "WORDCHARS" = "\${WORDCHARS/\\/}"; # ctrl-w on paths without make angery
+    "WORDCHARS" = "\${WORDCHARS//[\\/.]/}"; # ctrl-w on paths without make angery
   };
   programs = {
     home-manager.enable = true;

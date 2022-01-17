@@ -28,8 +28,7 @@
       st = "status";
 
       gone = ''
-        ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | a
-               │ wk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"'';
+        ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' │ awk '$2 == "[gone]" {print $1}' | xargs -r git branch -D'';
     };
     extraConfig = {
       branch.sort = "-committerdate";
@@ -38,7 +37,10 @@
     };
     includes = [
       { path = "~/.gitconfig.local"; }
-      { path = "~/.gitconfig.work"; condition = "gitdir:~/work/"; }
+      {
+        path = "~/.gitconfig.work";
+        condition = "gitdir:~/work/";
+      }
     ];
   };
 }

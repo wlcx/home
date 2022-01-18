@@ -4,7 +4,7 @@ let mypkgs = (import ../modules/pkgs.nix { inherit pkgs; });
 in {
   home.packages = mypkgs.all;
   home.sessionVariables = {
-    "EDITOR" = "nvim";
+    "EDITOR" = "vim";
     "WORDCHARS" = "\${WORDCHARS/\\/}"; # ctrl-w on paths without make angery
   };
   programs = {
@@ -16,7 +16,6 @@ in {
       shellAliases = {
         g = "git";
         cat = "bat";
-        vim = "nvim";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "sudo nixos-rebuild switch --flake '.#'";
       };

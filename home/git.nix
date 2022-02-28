@@ -21,6 +21,8 @@
       dc = "diff --cached";
       l = "log";
       lp = "log --patch";
+      p = "push";
+      pf = "push --force-with-lease";
       r = "rebase";
       rc = "rebase --continue";
       ra = "rebase --autostash";
@@ -34,6 +36,7 @@
       branch.sort = "-committerdate";
       log.showSignature = true;
       push.default = "current";
+      init.defaultBranch = "main";
     };
     includes = [
       { path = "~/.gitconfig.local"; }

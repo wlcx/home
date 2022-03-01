@@ -7,10 +7,10 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    plugins = with pkgs.vimPlugins; [ 
+    plugins = with pkgs.vimPlugins; [
       # Basic stuff
       vim-sensible
-      vim-noctu  # 16color colorscheme
+      vim-noctu # 16color colorscheme
       gruvbox-nvim
       fzfWrapper
       # More fancy shit
@@ -19,16 +19,16 @@
       nvim-lspconfig
       trouble-nvim
       vim-nix
-      rust-vim 
+      rust-vim
       vim-go
       # Git stuff
-      fugitive 
+      fugitive
       vim-gitgutter
     ];
     extraConfig = ''
-    lua <<EOF
-      ${builtins.readFile ./init.lua}
-    EOF
+      lua <<EOF
+        ${builtins.readFile ./init.lua}
+      EOF
     '';
   };
 }

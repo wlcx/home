@@ -6,8 +6,7 @@ in {
   home.sessionVariables = {
     "PATH" = "$HOME/.local/bin:$PATH";
     "EDITOR" = "vim";
-    "WORDCHARS" =
-      "\${WORDCHARS//[\\/.]/}"; # ctrl-w on paths without make angery
+    "WORDCHARS" = "\${WORDCHARS//[\\/.]/}"; # ctrl-w on paths without make angery
   };
   programs = {
     home-manager.enable = true;
@@ -54,8 +53,7 @@ in {
         hostname.format = "[$hostname]($style) ";
         directory = { truncation_length = -1; };
         git_branch.format = "[$symbol$branch]($style) ";
-        python.format =
-          "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
+        python.format = "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
         nodejs.format = "[js ($version )]($style)";
         nix_shell.format = "[nix $state( \\($name\\))]($style) ";
       };

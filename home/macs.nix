@@ -1,7 +1,7 @@
-{ ... }: {
-  home.sessionVariables = {
+{ pkgs, lib, ... }: {
     # Use secretive for SSH agent
-    "SSH_AUTH_SOCK" =
-      "/Users/$USERNAME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
+  programs.ssh.matchBlocks.all = lib.mkIf pkgs.stdenv.isDarwin {
+    host = "*";
+    extraOptions."IdentityAgent" = "~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
   };
 }

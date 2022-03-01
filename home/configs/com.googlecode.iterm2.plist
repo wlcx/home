@@ -608,7 +608,7 @@
 				<real>1</real>
 			</dict>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -632,6 +632,8 @@
 			<integer>80</integer>
 			<key>Command</key>
 			<string></string>
+			<key>Cursor Boost</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -671,6 +673,8 @@
 				<key>Red Component</key>
 				<real>0.90980392694473267</real>
 			</dict>
+			<key>Cursor Type</key>
+			<integer>2</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -1059,6 +1063,8 @@
 			<string></string>
 			<key>Silence Bell</key>
 			<false/>
+			<key>Smart Cursor Color</key>
+			<true/>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>

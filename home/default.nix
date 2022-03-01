@@ -30,21 +30,11 @@ in {
       plugins = [
         {
           name = "fzf-tab";
-          src = pkgs.fetchFromGitHub {
-            owner = "aloxaf";
-            repo = "fzf-tab";
-            rev = "master";
-            sha256 = "y9MuxJzXi1i+zCBzqjjCHL9uHzq/peDZEb3MByMm0Wg=";
-          };
+          src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
         }
         {
           name = "zsh-z";
-          src = pkgs.fetchFromGitHub {
-            owner = "agkozak";
-            repo = "zsh-z";
-            rev = "master";
-            sha256 = "1A6WZ+fJSf2WKZD7CYJB/pbgwV2mX+X8qInqQLeuT78=";
-          };
+          src = "${pkgs.zsh-z}/share/zsh-z";
         }
       ];
     };

@@ -6,7 +6,8 @@ in {
   home.sessionVariables = {
     "PATH" = "$HOME/.local/bin:$PATH";
     "EDITOR" = "vim";
-    "WORDCHARS" = "\${WORDCHARS//[\\/.]/}"; # ctrl-w on paths without make angery
+    "WORDCHARS" =
+      "\${WORDCHARS//[\\/.]/}"; # ctrl-w on paths without make angery
   };
   programs = {
     home-manager.enable = true;
@@ -20,12 +21,32 @@ in {
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "sudo nixos-rebuild switch --flake '.#'";
       };
-
-      plugins = [{
-        name = "zsh-z";
-        file = "share/zsh-z/zsh-z.plugin.zsh";
-        src = pkgs.zsh-z;
-      }];
+      # Extra .zshrc stuff
+      initExtra = ''
+        # zstyle ':completion:*' menu select # fancy interactive autocomplete
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # tabcomplete lower to upper case
+      '';
+      enableSyntaxHighlighting = true;
+      plugins = [
+        {
+          name = "fzf-tab";
+          src = pkgs.fetchFromGitHub {
+            owner = "aloxaf";
+            repo = "fzf-tab";
+            rev = "master";
+            sha256 = "y9MuxJzXi1i+zCBzqjjCHL9uHzq/peDZEb3MByMm0Wg=";
+          };
+        }
+        {
+          name = "zsh-z";
+          src = pkgs.fetchFromGitHub {
+            owner = "agkozak";
+            repo = "zsh-z";
+            rev = "master";
+            sha256 = "1A6WZ+fJSf2WKZD7CYJB/pbgwV2mX+X8qInqQLeuT78=";
+          };
+        }
+      ];
     };
 
     exa = {
@@ -43,7 +64,8 @@ in {
         hostname.format = "[$hostname]($style) ";
         directory = { truncation_length = -1; };
         git_branch.format = "[$symbol$branch]($style) ";
-        python.format = "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
+        python.format =
+          "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
         nodejs.format = "[js ($version )]($style)";
         nix_shell.format = "[nix $state( \\($name\\))]($style) ";
       };

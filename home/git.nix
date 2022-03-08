@@ -34,7 +34,6 @@
     };
     extraConfig = {
       branch.sort = "-committerdate";
-      log.showSignature = true;
       push.default = "current";
       init.defaultBranch = "main";
     };

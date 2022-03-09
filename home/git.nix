@@ -38,7 +38,11 @@
       init.defaultBranch = "main";
     };
     includes = [
-      { path = "~/.gitconfig.local"; }
+      # Always include local gitconfig if it's there
+      {
+        path = "~/.gitconfig.local";
+      }
+      # Include work gitconfig if we're somewhere in ~/work
       {
         path = "~/.gitconfig.work";
         condition = "gitdir:~/work/";

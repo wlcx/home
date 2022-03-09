@@ -67,7 +67,10 @@ in {
 
     fzf.enable = true;
 
-    ssh.enable = true;
+    ssh = {
+      enable = true;
+      includes = [ "~/.ssh/config.local" ];
+    };
 
   };
 }

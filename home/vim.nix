@@ -12,7 +12,8 @@
       vim-sensible
       vim-noctu # 16color colorscheme
       gruvbox-nvim
-      fzfWrapper
+      fzfWrapper # The basic "built in" fzf stuff
+      fzf-vim # The fancier opt in fzf stuff
       # More fancy shit
       nvim-treesitter
       # Language stuff

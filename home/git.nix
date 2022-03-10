@@ -27,6 +27,7 @@
       rc = "rebase --continue";
       ra = "rebase --autostash";
       rai = "rebase --autostash --interactive";
+      rs = "restore --staged";
       st = "status";
 
       gone = ''

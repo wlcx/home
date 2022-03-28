@@ -1,6 +1,6 @@
 # This module sets up a "full" neovim install with plugins and unicorns. It
 # also makes neovim the default editor and aliases vim to nvim.
-{ pkgs, ... }: {
+{ pkgs, lib, strings, ... }: {
   home.sessionVariables = { "EDITOR" = "nvim"; };
   home.packages = with pkgs; [ rnix-lsp ripgrep ];
   programs.neovim = {
@@ -14,14 +14,6 @@
       gruvbox-nvim
       fzfWrapper # The basic "built in" fzf stuff
       fzf-vim # The fancier opt in fzf stuff
-      # More fancy shit
-      nvim-treesitter
-      # Language stuff
-      nvim-lspconfig
-      trouble-nvim
-      vim-nix
-      rust-vim
-      vim-go
       # Git stuff
       fugitive
       vim-gitgutter

@@ -14,6 +14,11 @@ in {
     # Shell and env-y stuff
     zsh = {
       enable = true;
+      history = rec {
+        extended = true;
+        size = 100000;
+        save = size;
+      };
       shellAliases = {
         g = "git";
         cat = "bat";

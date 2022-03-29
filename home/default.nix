@@ -38,7 +38,7 @@ in {
             owner = "aloxaf";
             repo = "fzf-tab";
             rev = "master";
-            sha256 = "/9An/C9rDLx1WsC/yYcYPVzA6fjsddMQaBT1DMAxYSI=";
+            sha256 = "NAc8EXSXBDjph246pcaW1iyToga0k7aRJ/+P5dFSmdk=";
           };
         }
         {

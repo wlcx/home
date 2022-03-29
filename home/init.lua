@@ -1,5 +1,6 @@
 -- Basics
-vim.o.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true  -- number + relativenumber == hybrid
 vim.o.mouse = "nvi"  -- mouse mode in normal, visual and insert
 vim.o.textwidth = 88  -- A vaguely sensible default textwidth
 vim.o.colorcolumn = "+0"  -- Mark the textwidth

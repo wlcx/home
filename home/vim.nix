@@ -17,6 +17,8 @@
       # Git stuff
       fugitive
       vim-gitgutter
+      # More stuff idk
+      emmet-vim
     ];
     extraConfig = ''
       lua <<EOF

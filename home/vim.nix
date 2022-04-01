@@ -14,6 +14,9 @@
       gruvbox-nvim
       fzfWrapper # The basic "built in" fzf stuff
       fzf-vim # The fancier opt in fzf stuff
+      # The only language plugin you always need... because if it's running nixos you
+      # *will* be editing nix files!
+      vim-nix
       # Git stuff
       fugitive
       vim-gitgutter

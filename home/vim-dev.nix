@@ -5,7 +5,6 @@
     # Language stuff
     nvim-lspconfig
     trouble-nvim
-    vim-nix
     rust-vim
     vim-go
   ];

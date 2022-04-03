@@ -11,6 +11,7 @@
       ./vim.nix
       ./vim-dev.nix
       ./passwords.nix
+      ./gpg.nix
     ];
   };
   server = { ... }: { imports = [ ./default.nix ./git.nix ./vim.nix ]; };

@@ -22,6 +22,7 @@ in {
       shellAliases = {
         g = "git";
         cat = "bat";
+        ip = "ip --color=auto";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "sudo nixos-rebuild switch --flake '.#'";
       };

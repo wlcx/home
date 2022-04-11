@@ -81,7 +81,10 @@ in {
       nix-direnv.enableFlakes = true;
     };
 
-    fzf.enable = true;
+    fzf = {
+      enable = true;
+      defaultCommand = "${pkgs.ripgrep}/bin/rg --files";
+    };
 
     ssh = {
       enable = true;

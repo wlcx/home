@@ -30,6 +30,8 @@ in {
       initExtra = ''
         # zstyle ':completion:*' menu select # fancy interactive autocomplete
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # tabcomplete lower to upper case
+        # git already sorts output non-alphabetically, which we want to preserve
+        zstyle ':completion:*:git-checkout:*' sort false
       '';
       enableSyntaxHighlighting = true;
       plugins = [

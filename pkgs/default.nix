@@ -1,6 +1,5 @@
 # TODO: auto import everything
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   qrclip = pkgs.callPackage ./qrclip { };
   zbar = pkgs.callPackage ./zbar { };
 }

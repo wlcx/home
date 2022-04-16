@@ -27,6 +27,9 @@ require'lspconfig'.pylsp.setup{
 require'lspconfig'.rnix.setup{
   on_attach = on_attach
 }
+require'lspconfig'.rls.setup{
+  on_attach = on_attach,
+}
 
 -- Diags with Trouble
 require('trouble').setup {

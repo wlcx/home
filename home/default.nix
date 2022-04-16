@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
-let mypkgs = (import ../modules/pkgs.nix { inherit pkgs; });
+let mypkgs = pkgs.callPackage ../modules/pkgs.nix { };
 in {
   home.packages = mypkgs.all;
   home.sessionVariables = {

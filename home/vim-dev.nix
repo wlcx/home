@@ -7,6 +7,7 @@
       nvim-lspconfig
       trouble-nvim
       rust-vim
+      vim-terraform
     ]
     # delve is unsupported on aarch64-linux and golangci-lint is broken on x86_64-darwin
     # (see https://github.com/NixOS/nixpkgs/issues/168984).

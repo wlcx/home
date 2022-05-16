@@ -8,4 +8,5 @@
     extraOptions."IdentityAgent" =
       "~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
   };
+  programs.zsh.initExtra = "eval $(/opt/homebrew/bin/brew shellenv)";
 }

@@ -95,6 +95,7 @@ in {
     ssh = {
       enable = true;
       includes = [ "~/.ssh/config.local" ];
+      matchBlocks."*".user = "samw";
     };
 
   };

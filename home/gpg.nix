@@ -9,7 +9,11 @@
         trust = "ultimate";
       }
       {
-        source = ./yubikey_pgp_public.asc;
+        source = ./gpg_yubikey_5.asc;
+        trust = "ultimate";
+      }
+      {
+        source = ./gpg_yubikey_5c.asc;
         trust = "ultimate";
       }
     ];

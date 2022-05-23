@@ -24,7 +24,7 @@ in {
         cat = "bat";
         ip = "ip --color=auto";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
-        nrswitch = "sudo nixos-rebuild switch --flake '.#'";
+        nrswitch = "nixos-rebuild --use-remote-sudo switch --flake '.#'";
       };
       # Extra .zshrc stuff
       initExtra = ''

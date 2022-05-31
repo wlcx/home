@@ -30,6 +30,9 @@ require'lspconfig'.rnix.setup{
 require'lspconfig'.rls.setup{
   on_attach = on_attach,
 }
+require'lspconfig'.tsserver.setup{
+  on_attach = on_attach,
+}
 
 -- Diags with Trouble
 require('trouble').setup {

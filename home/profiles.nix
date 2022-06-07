@@ -9,7 +9,7 @@
       ./macs.nix
       ./rust.nix
       ./vim.nix
-      ./vim-dev.nix
+      ./vim-dev
       ./passwords.nix
       ./gpg.nix
     ];

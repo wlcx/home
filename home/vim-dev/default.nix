@@ -24,12 +24,13 @@ in {
       vim-vue-plugin
       kotlin-vim
     ]
-    # delve is unsupported on aarch64-linux and golangci-lint is broken on x86_64-darwin
+    # delve is unsupported on aarch64-linux and golangci-lint is broken on darwin
     # (see https://github.com/NixOS/nixpkgs/issues/168984).
-    ++ lib.optionals (system != "aarch64-linux" && system != "x86_64-darwin") [ vim-go ];
+    ++ lib.optionals (system != "aarch64-linux" && !pkgs.stdenv.isDarwin ) [ vim-go ];
   programs.neovim.extraConfig = ''
     lua <<EOF
         ${builtins.readFile ./dev.lua}
+        ${builtins.readFile ./lspconfig-volar.lua}
     EOF
   '';
 }

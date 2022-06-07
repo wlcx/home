@@ -1,0 +1,12 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 7544201..9caa5c6 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -30,7 +30,6 @@ packages = [
+ python = "^3.6"
+ dataclasses = {version = "^0.8", python = "<3.7"}
+ cryptography = ">=2.1, <39"
+-pyOpenSSL = {version = ">=0.15.1", optional = true}
+ pyscard = "^1.9 || ^2.0"
+ fido2 = ">=0.9, <1.0"
+ click = "^6.0 || ^7.0 || ^8.0"

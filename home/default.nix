@@ -8,6 +8,11 @@ in {
     "EDITOR" = "vim";
     "WORDCHARS" = "\${WORDCHARS//[\\/.=]/}"; # ctrl-w on paths without make angery
   };
+  nix = {
+    enable = true;
+    package = pkgs.nix;
+    settings.experimental-features = "nix-command flakes";
+  };
   programs = {
     home-manager.enable = true;
 
@@ -84,7 +89,6 @@ in {
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      nix-direnv.enableFlakes = true;
     };
 
     fzf = {

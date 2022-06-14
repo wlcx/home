@@ -1,8 +1,13 @@
 # This module sets up a "full" neovim install with plugins and unicorns. It
 # also makes neovim the default editor and aliases vim to nvim.
-{ pkgs, lib, strings, ... }: {
-  home.sessionVariables = { "EDITOR" = "nvim"; };
-  home.packages = with pkgs; [ rnix-lsp ripgrep ];
+{
+  pkgs,
+  lib,
+  strings,
+  ...
+}: {
+  home.sessionVariables = {"EDITOR" = "nvim";};
+  home.packages = with pkgs; [rnix-lsp ripgrep];
   programs.neovim = {
     enable = true;
     viAlias = true;

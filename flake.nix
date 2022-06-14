@@ -63,8 +63,8 @@
           extraModules = [./home/docker.nix ./home/aws.nix];
         };
         zinc = lib.mkHome {
-          profile = profiles.laptop;
           system = "aarch64-darwin";
+          profile = profiles.laptop;
         };
       };
     }
@@ -81,9 +81,7 @@
       #   `overrideDerivation`) so we filter out anything that isn't a derivation
       # - We also filter out any packages that aren't supported on the current
       #   platform.
-      packages = with pkgs; (lib.filterAttrs (_: v: (lib.isDerivation v
-        && lib.meta.availableOn platform v))
-      pkgs.mypkgs);
+      packages = with pkgs.lib; (filterAttrs (_: v: (isDerivation v && meta.availableOn platform v)) pkgs.mypkgs);
       formatter = pkgs.alejandra;
       # A devshell with useful utils
       devShells.default = pkgs.devshell.mkShell {

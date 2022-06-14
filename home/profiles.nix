@@ -1,8 +1,8 @@
 {
-  dev = { ... }: {
-    imports = [ ./default.nix ./git.nix ./rust.nix ./vim.nix ./vim-dev.nix ];
+  dev = {...}: {
+    imports = [./default.nix ./git.nix ./rust.nix ./vim.nix ./vim-dev.nix];
   };
-  laptop = { ... }: {
+  laptop = {...}: {
     imports = [
       ./default.nix
       ./git.nix
@@ -14,5 +14,5 @@
       ./gpg.nix
     ];
   };
-  server = { ... }: { imports = [ ./default.nix ./git.nix ./vim.nix ]; };
+  server = {...}: {imports = [./default.nix ./git.nix ./vim.nix];};
 }

@@ -8,4 +8,3 @@
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBG97EFzrTE5jI0P5CP5/y/thCzGNHt74u2mpXpdrB25URrn3ABDJcbmO/tGtNR8uhM3n/kUpr6Ax27orjmIOQtA= boron-se-main@secretive.boron.local"
   ];
 }
-

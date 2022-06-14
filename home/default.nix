@@ -1,6 +1,9 @@
-{ pkgs, lib, ... }:
-
- let packages  = pkgs.callPackage ./packages.nix {};
+{
+  pkgs,
+  lib,
+  ...
+}: let
+  packages = pkgs.callPackage ./packages.nix {};
 in {
   home.packages = packages.all;
   home.sessionVariables = {
@@ -74,11 +77,10 @@ in {
       enable = true;
       settings = {
         add_newline = false;
-        format =
-          "$username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$golang$kotlin$nodejs$python$rust$terraform$nix_shell$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$status$shell$character";
+        format = "$username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$golang$kotlin$nodejs$python$rust$terraform$nix_shell$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$status$shell$character";
         username.format = "[$user]($style) ";
         hostname.format = "[$hostname]($style) ";
-        directory = { truncation_length = -1; };
+        directory = {truncation_length = -1;};
         git_branch.format = "[$symbol$branch]($style) ";
         python.format = "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
         nodejs.format = "[js ($version )]($style)";
@@ -98,9 +100,8 @@ in {
 
     ssh = {
       enable = true;
-      includes = [ "~/.ssh/config.local" ];
+      includes = ["~/.ssh/config.local"];
       matchBlocks."*".user = "samw";
     };
-
   };
 }

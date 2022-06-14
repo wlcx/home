@@ -1,1 +1,1 @@
-{ pkgs, ... }: { home.packages = [ pkgs.rustup pkgs.rust-analyzer ]; }
+{pkgs, ...}: {home.packages = [pkgs.rustup pkgs.rust-analyzer];}

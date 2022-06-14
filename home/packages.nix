@@ -1,4 +1,4 @@
-{ pkgs }:
+{pkgs}:
 with pkgs; rec {
   # The stuff you want installed everywhere. The necessities.
   base = [
@@ -15,10 +15,10 @@ with pkgs; rec {
   ];
 
   # Networking shit
-  net = [ iperf3 nmap socat tcpdump ];
+  net = [iperf3 nmap socat tcpdump];
 
   # development tools
-  dev = [ jq nixfmt gh glab hexyl ];
+  dev = [jq nixfmt gh glab hexyl];
 
-  all = (base ++ net ++ dev);
+  all = base ++ net ++ dev;
 }

@@ -1,12 +1,13 @@
-{ ... }: {
+{...}: {
   programs.git = {
     enable = true;
     userName = "Sam Willcocks";
     userEmail = "sam@wlcx.cc";
 
-    delta = { # Better diffs
+    delta = {
+      # Better diffs
       enable = true;
-      options = { line-numbers = true; };
+      options = {line-numbers = true;};
     };
 
     aliases = {

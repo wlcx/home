@@ -1,6 +1,6 @@
 {
   dev = {...}: {
-    imports = [./default.nix ./git.nix ./rust.nix ./vim.nix ./vim-dev.nix];
+    imports = [./default.nix ./git.nix ./rust.nix ./vim.nix ./vim-dev];
   };
   laptop = {...}: {
     imports = [

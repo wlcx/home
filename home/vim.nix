@@ -27,6 +27,7 @@
       vim-gitgutter
       # More stuff idk
       emmet-vim
+      vim-sleuth # guess whitespace settings from file
     ];
     extraConfig = ''
       lua <<EOF

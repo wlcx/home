@@ -27,6 +27,7 @@ in {
       vim-javascript
       vim-vue-plugin
       kotlin-vim
+      Jenkinsfile-vim-syntax
     ]
     # delve is unsupported on aarch64-linux and golangci-lint is broken on darwin
     # (see https://github.com/NixOS/nixpkgs/issues/168984).

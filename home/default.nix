@@ -1,8 +1,8 @@
 { pkgs, lib, ... }:
 
-let mypkgs = pkgs.callPackage ../modules/pkgs.nix { };
+ let packages  = pkgs.callPackage ./packages.nix {};
 in {
-  home.packages = mypkgs.all;
+  home.packages = packages.all;
   home.sessionVariables = {
     "PATH" = "$HOME/.local/bin:$PATH";
     "EDITOR" = "vim";

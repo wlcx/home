@@ -28,11 +28,21 @@ require'lspconfig'.rnix.setup{
   on_attach = on_attach
 }
 require'lspconfig'.rls.setup{
-  on_attach = on_attach,
+  on_attach = on_attach
 }
+require'lspconfig'.eslint.setup{
+  on_attach = on_attach
+}
+-- Configure volar (vuejs language server stuff) in "takeover" mode
+require'lspconfig'.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+  on_attach = on_attach
+}
+--[[ If we didn't have takeover mode enabled above, we'd want this
 require'lspconfig'.tsserver.setup{
-  on_attach = on_attach,
+  on_attach = on_attach
 }
+]]--
 
 -- Diags with Trouble
 require('trouble').setup {

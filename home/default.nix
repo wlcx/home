@@ -101,6 +101,8 @@ in {
     ssh = {
       enable = true;
       includes = ["~/.ssh/config.local"];
+      serverAliveInterval = 30;
+      serverAliveCountMax = 10;
       matchBlocks."*".user = "samw";
     };
   };

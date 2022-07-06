@@ -13,6 +13,7 @@
     aliases = {
       a = "add";
       ap = "add -p";
+      br = "branch";
       c = "commit";
       ca = "commit --amend";
       can = "commit --amend --no-edit";

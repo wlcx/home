@@ -30,6 +30,9 @@ require'lspconfig'.rnix.setup{
 require'lspconfig'.rls.setup{
   on_attach = on_attach
 }
+require'lspconfig'.dhall_lsp_server.setup{
+  on_attach = on_attach
+}
 require'lspconfig'.eslint.setup{
   on_attach = on_attach
 }

@@ -26,6 +26,7 @@ in {
       vim-protobuf
       vim-javascript
       vim-vue-plugin
+      dhall-vim
       kotlin-vim
       Jenkinsfile-vim-syntax
     ]

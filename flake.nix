@@ -3,7 +3,6 @@
   inputs = {
     # Nixpkgs
     nixpkgs = {url = "github:nixos/nixpkgs/nixos-22.05";};
-    nixpkgs-samw = {url = "github:wlcx/nixpkgs/pngpaste-0.2.3";};
     # Other modules
     home-manager = {
       url = "github:nix-community/home-manager/release-22.05";
@@ -18,12 +17,6 @@
   };
   outputs = inputs: let
     overlays = [
-      # Add packages from "other" nixpkgs
-      (final: prev:
-        with inputs; {
-          # TODO: get pngpaste PR merged...
-          pngpaste = nixpkgs-samw.legacyPackages.${prev.system}.pngpaste;
-        })
       # Add our own local packages
       (final: prev: rec {
         # Make my local packages available as pkgs.mypkgs.<foo>

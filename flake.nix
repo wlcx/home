@@ -28,36 +28,37 @@
   in (rec {
       lib = {
         mkHome = {
-          profile,
-          extraModules ? [],
+          profiles,
           system,
           username ? "samw",
         }:
-          inputs.home-manager.lib.homeManagerConfiguration rec {
+          inputs.home-manager.lib.homeManagerConfiguration {
             inherit username system;
             stateVersion = "21.11";
             homeDirectory =
               if (inputs.nixpkgs.lib.systems.elaborate system).isDarwin
               then "/Users/${username}"
               else "/home/${username}";
-            configuration = {...} @ args: ((profile args) // {nixpkgs.overlays = overlays;});
-            extraSpecialArgs = {inherit system;};
-            inherit extraModules;
+            # In home-manager 22.11 configuration/extraModules go away and are replaced
+            # by a single "modules". So let's get ready for that.
+            configuration = {...}: {};
+            extraSpecialArgs = { inherit system; };
+            extraModules = profiles ++ [{ nixpkgs.overlays = overlays; }];
           };
       };
-      profiles = import ./home/profiles.nix;
 
       # Standalone home-manager configurations
-      homeConfigurations = {
+      homeConfigurations = let 
+        profiles = import ./home/profiles.nix;
+      in {
         boron = lib.mkHome {
           system = "aarch64-darwin";
-          profile = profiles.laptop;
+          profiles = with profiles; [ default dev sensitive mac docker aws ];
           username = "samuel.willcocks";
-          extraModules = [./home/docker.nix ./home/aws.nix];
         };
         zinc = lib.mkHome {
           system = "aarch64-darwin";
-          profile = profiles.laptop;
+          profiles = with profiles; [ default dev sensitive mac ];
         };
       };
     }

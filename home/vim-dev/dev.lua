@@ -27,7 +27,7 @@ require'lspconfig'.pylsp.setup{
 require'lspconfig'.rnix.setup{
   on_attach = on_attach
 }
-require'lspconfig'.rls.setup{
+require'lspconfig'.rust_analyzer.setup{
   on_attach = on_attach
 }
 require'lspconfig'.dhall_lsp_server.setup{

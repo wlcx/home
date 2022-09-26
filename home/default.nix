@@ -15,7 +15,7 @@ in {
     enable = true;
     package = pkgs.nix;
     settings.experimental-features = "nix-command flakes";
-    settings.max-jobs = "auto";  # Gotta go fast (build derivations in parallel)
+    settings.max-jobs = "auto"; # Gotta go fast (build derivations in parallel)
   };
   programs = {
     home-manager.enable = true;

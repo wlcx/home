@@ -3,7 +3,7 @@
   default = ./default.nix;
   # A machine for development
   dev = {...}: {
-    imports = [ ./git.nix ./rust.nix ./vim.nix ./vim-dev ./vscode.nix ];
+    imports = [./git.nix ./rust.nix ./vim.nix ./vim-dev ./vscode.nix];
   };
   # Sensitive stuff
   sensitive = {...}: {

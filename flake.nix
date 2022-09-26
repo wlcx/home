@@ -26,6 +26,7 @@
       })
     ];
   in (rec {
+      profiles = import ./home/profiles.nix;
       lib = {
         mkHome = {
           profiles,
@@ -42,23 +43,21 @@
             # In home-manager 22.11 configuration/extraModules go away and are replaced
             # by a single "modules". So let's get ready for that.
             configuration = {...}: {};
-            extraSpecialArgs = { inherit system; };
-            extraModules = profiles ++ [{ nixpkgs.overlays = overlays; }];
+            extraSpecialArgs = {inherit system;};
+            extraModules = profiles ++ [{nixpkgs.overlays = overlays;}];
           };
       };
 
       # Standalone home-manager configurations
-      homeConfigurations = let 
-        profiles = import ./home/profiles.nix;
-      in {
+      homeConfigurations = {
         boron = lib.mkHome {
           system = "aarch64-darwin";
-          profiles = with profiles; [ default dev sensitive mac docker aws ];
+          profiles = with profiles; [default dev sensitive mac docker aws];
           username = "samuel.willcocks";
         };
         zinc = lib.mkHome {
           system = "aarch64-darwin";
-          profiles = with profiles; [ default dev sensitive mac ];
+          profiles = with profiles; [default dev sensitive mac];
         };
       };
     }

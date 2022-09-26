@@ -52,12 +52,12 @@
       homeConfigurations = {
         boron = lib.mkHome {
           system = "aarch64-darwin";
-          profiles = with profiles; [default dev sensitive mac docker aws];
+          profiles = with profiles; [default dev dev-gui sensitive mac docker aws];
           username = "samuel.willcocks";
         };
         zinc = lib.mkHome {
           system = "aarch64-darwin";
-          profiles = with profiles; [default dev sensitive mac];
+          profiles = with profiles; [default dev dev-gui sensitive mac];
         };
       };
     }

@@ -3,7 +3,12 @@
   default = ./default.nix;
   # A machine for development
   dev = {...}: {
-    imports = [./git.nix ./rust.nix ./vim.nix ./vim-dev ./vscode.nix];
+    imports = [./git.nix ./rust.nix ./vim.nix ./vim-dev];
+  };
+  # A machine for dev with a GUI
+  # TODO: detect this automatically somehow?
+  dev-gui = {...}: {
+    imports = [./vscode.nix];
   };
   # Sensitive stuff
   sensitive = {...}: {

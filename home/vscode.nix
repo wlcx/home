@@ -10,6 +10,7 @@
     userSettings = {
       "update.mode" = "none";
       "workbench.colorTheme" = "Gruvbox Dark Hard";
+      "files.trimTrailingWhitespace" = true;
     };
   };
 }

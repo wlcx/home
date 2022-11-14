@@ -34,6 +34,7 @@ in {
         ip = "ip --color=auto";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "nixos-rebuild --use-remote-sudo switch --flake '.#'";
+        da = "direnv allow .";
       };
       # Extra .zshrc stuff
       initExtra = ''

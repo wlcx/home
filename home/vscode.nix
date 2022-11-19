@@ -6,6 +6,8 @@
     extensions = with pkgs.vscode-extensions; [
       matklad.rust-analyzer
       jdinhlife.gruvbox
+      jnoortheen.nix-ide
+      editorconfig.editorconfig
     ];
     userSettings = {
       "update.mode" = "none";

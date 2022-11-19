@@ -1,4 +1,5 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = [pkgs.git-open];
   programs.git = {
     enable = true;
     userName = "Sam Willcocks";

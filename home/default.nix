@@ -23,6 +23,7 @@ in {
     # Shell and env-y stuff
     zsh = {
       enable = true;
+      autocd = true;
       history = rec {
         extended = true;
         size = 100000;

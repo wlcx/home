@@ -28,6 +28,7 @@ in {
         extended = true;
         size = 100000;
         save = size;
+        ignoreDups = true;
       };
       shellAliases = {
         g = "git";

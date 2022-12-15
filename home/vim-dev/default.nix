@@ -18,9 +18,12 @@ in {
     [
       # More fancy shit
       nvim-treesitter
-      # Language stuff
-      nvim-lspconfig
       trouble-nvim
+      # Language server/completions 
+      nvim-lspconfig
+      nvim-cmp
+      cmp-nvim-lsp
+      # Language specific
       rust-vim
       vim-terraform
       vim-protobuf

@@ -3,7 +3,7 @@
   lib,
   stdenv,
 }: let
-  zbar = pkgs.mypkgs.zbar.override {enableVideo = false;};
+  zbar = pkgs.zbar.override {enableVideo = false;};
 in
   (pkgs.writeShellScriptBin "qrclip" ''
     set -eo pipefail

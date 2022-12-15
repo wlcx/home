@@ -2,10 +2,10 @@
   description = "Samw's home environment, as managed by nix/home-manager.";
   inputs = {
     # Nixpkgs
-    nixpkgs = {url = "github:nixos/nixpkgs/nixos-22.05";};
+    nixpkgs = {url = "github:nixos/nixpkgs/nixos-22.11";};
     # Other modules
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
@@ -21,8 +21,6 @@
       (final: prev: rec {
         # Make my local packages available as pkgs.mypkgs.<foo>
         mypkgs = prev.callPackage ./pkgs {};
-        # Directly override yubikey-manager
-        yubikey-manager = mypkgs.yubikey-manager;
       })
     ];
   in (rec {
@@ -34,17 +32,17 @@
           username ? "samw",
         }:
           inputs.home-manager.lib.homeManagerConfiguration {
-            inherit username system;
-            stateVersion = "21.11";
-            homeDirectory =
-              if (inputs.nixpkgs.lib.systems.elaborate system).isDarwin
-              then "/Users/${username}"
-              else "/home/${username}";
-            # In home-manager 22.11 configuration/extraModules go away and are replaced
-            # by a single "modules". So let's get ready for that.
-            configuration = {...}: {};
+            pkgs = inputs.nixpkgs.legacyPackages.${system};
+            modules = [
+              { home = { 
+              inherit username;
+              homeDirectory =
+                if (inputs.nixpkgs.lib.systems.elaborate system).isDarwin
+                then "/Users/${username}"
+                else "/home/${username}";
+              stateVersion = "21.11";
+            };}] ++ profiles ++ [{nixpkgs.overlays = overlays;}];
             extraSpecialArgs = {inherit system;};
-            extraModules = profiles ++ [{nixpkgs.overlays = overlays;}];
           };
       };
 

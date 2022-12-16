@@ -57,6 +57,10 @@
           system = "aarch64-darwin";
           profiles = with profiles; [default dev dev-gui sensitive mac];
         };
+        luroy = lib.mkHome {
+          system = "x86_64-linux";
+          profiles = with profiles; [default dev];
+        };
       };
     }
     # Per-system things

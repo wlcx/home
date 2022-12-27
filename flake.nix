@@ -2,7 +2,7 @@
   description = "Samw's home environment, as managed by nix/home-manager.";
   inputs = {
     # Nixpkgs
-    nixpkgs = {url = "github:nixos/nixpkgs/nixos-22.11";};
+    nixpkgs = {url = "github:nixos/nixpkgs/release-22.11";};
     # Other modules
     home-manager = {
       url = "github:nix-community/home-manager/release-22.11";

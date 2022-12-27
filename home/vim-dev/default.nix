@@ -32,6 +32,7 @@ in {
       dhall-vim
       kotlin-vim
       Jenkinsfile-vim-syntax
+      html5-vim
     ]
     # delve is unsupported on aarch64-linux and golangci-lint is broken on darwin
     # (see https://github.com/NixOS/nixpkgs/issues/168984).

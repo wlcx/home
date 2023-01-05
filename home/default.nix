@@ -37,6 +37,7 @@ in {
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "nixos-rebuild --use-remote-sudo switch --flake '.#'";
         da = "direnv allow .";
+        dr = "direnv reload";
       };
       # Extra .zshrc stuff
       initExtra = ''

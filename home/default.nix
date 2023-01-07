@@ -11,12 +11,16 @@ in {
     "EDITOR" = "vim";
     "WORDCHARS" = "\${WORDCHARS//[\\/.=]/}"; # ctrl-w on paths without make angery
   };
+  /*
+  # For some reason this doesn't play nice when using home manager config from inside
+  # a nixos configuration.
   nix = {
     enable = true;
     package = pkgs.nix;
     settings.experimental-features = "nix-command flakes";
     settings.max-jobs = "auto"; # Gotta go fast (build derivations in parallel)
   };
+  */
   programs = {
     home-manager.enable = true;
 

@@ -32,7 +32,10 @@
           username ? "samw",
         }:
           inputs.home-manager.lib.homeManagerConfiguration {
-            pkgs = inputs.nixpkgs.legacyPackages.${system};
+            pkgs = (import inputs.nixpkgs { 
+              inherit system;
+              config.allowUnfree = true;  # Yes I know it's bad for me
+            });
             modules = [
               { home = { 
               inherit username;
@@ -41,7 +44,18 @@
                 then "/Users/${username}"
                 else "/home/${username}";
               stateVersion = "21.11";
-            };}] ++ profiles ++ [{nixpkgs.overlays = overlays;}];
+            };}] ++ profiles ++ [
+              {nixpkgs.overlays = overlays;}
+              # See comment in home/default.nix.
+              ({ pkgs, ... }: {
+                nix = {
+                  enable = true;
+                  package = pkgs.nix;
+                  settings.experimental-features = "nix-command flakes";
+                  settings.max-jobs = "auto"; # Gotta go fast (build derivations in parallel)
+                };
+              })
+            ];
             extraSpecialArgs = {inherit system;};
           };
       };

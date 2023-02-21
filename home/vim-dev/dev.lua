@@ -97,6 +97,9 @@ require'lspconfig'.tsserver.setup{
 }
 ]]--
 
+-- Other language plugins
+require('go').setup()
+
 -- Diags with Trouble
 require('trouble').setup {
   icons = false,

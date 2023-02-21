@@ -3,17 +3,7 @@
   lib,
   system,
   ...
-}: let
-  vim-vue-plugin = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-vue-plugin";
-    src = pkgs.fetchFromGitHub {
-      owner = "leafOfTree";
-      repo = "vim-vue-plugin";
-      rev = "b2bb4dd8f6d97909c48bc33937177d4068921a10";
-      sha256 = "eBfMxt5AaSCHzU7PFp7eWZhGY8l3EqeMLrU0ntB6eLA=";
-    };
-  };
-in {
+}: {
   programs.neovim.plugins = with pkgs.vimPlugins;
     [
       # More fancy shit
@@ -24,6 +14,7 @@ in {
       nvim-cmp
       cmp-nvim-lsp
       # Language specific
+      go-nvim
       rust-vim
       vim-terraform
       vim-protobuf

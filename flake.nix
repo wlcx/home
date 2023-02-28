@@ -53,6 +53,11 @@
                   package = pkgs.nix;
                   settings.experimental-features = "nix-command flakes";
                   settings.max-jobs = "auto"; # Gotta go fast (build derivations in parallel)
+                  # Pin the nixpkgs registry to our locked nixpkgs. This means that we
+                  # get the same packages via e.g. nix shell as we have at the system
+                  # level, so less duplication overall and no more fetching that 30MB src
+                  # every time you run nix shell.
+                  registry.nixpkgs.flake = inputs.nixpkgs;
                 };
               })
             ];

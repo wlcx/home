@@ -11,7 +11,7 @@ vim.o.softtabstop = 4
 vim.o.expandtab = true  -- owo expands ur tab
 
 vim.o.list = true
-vim.o.listchars = "trail:·"  -- show trailing spaces
+vim.o.listchars = "trail:·,tab:␉·"  -- show trailing spaces
 
 -- Colors
 vim.cmd "colorscheme gruvbox"

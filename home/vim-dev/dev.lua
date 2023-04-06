@@ -12,6 +12,12 @@ end
 -- Completion
 local cmp = require'cmp'
 cmp.setup({
+  -- Use snippy for completion
+  snippet = {
+    expand = function(args)
+      require('snippy').expand_snippet(args.body)
+    end,
+  },
   -- Disable completions if we're in a comment
   enabled = function()
     if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then

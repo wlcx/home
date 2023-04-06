@@ -13,6 +13,8 @@
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
+      nvim-snippy
+      cmp-snippy
       # Language specific
       go-nvim
       rust-vim

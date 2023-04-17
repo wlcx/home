@@ -15,7 +15,7 @@ cmp.setup({
   -- Use snippy for completion
   snippet = {
     expand = function(args)
-      require('snippy').expand_snippet(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   -- Disable completions if we're in a comment

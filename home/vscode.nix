@@ -11,8 +11,12 @@
     ];
     userSettings = {
       "update.mode" = "none";
-      "workbench.colorTheme" = "Gruvbox Dark Hard";
+      "window.autoDetectColorScheme" = true;
+      "workbench.preferredDarkColorTheme" = "Gruvbox Dark Hard";
       "files.trimTrailingWhitespace" = true;
+      # Don't try to write to the nix-managed .ssh/config
+      "remote.SSH.configFile" = "~/.ssh/config.local";
+      "editor.rulers" = [ 90 ];
     };
   };
 }

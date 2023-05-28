@@ -1,12 +1,12 @@
-# This module sets up a "full" neovim install with plugins and unicorns. It
-# also makes neovim the default editor and aliases vim to nvim.
+# Vim with some niceties. If you're spending any time in vim you'll want this.
+# For a full-fat vim with all the bells and whistles, see vim-dev
 {
   pkgs,
   lib,
   strings,
   ...
 }: {
-  home.sessionVariables = {"EDITOR" = "nvim";};
+  home.sessionVariables = lib.mkForce {"EDITOR" = "nvim";};
   home.packages = with pkgs; [rnix-lsp ripgrep];
   programs.neovim = {
     enable = true;

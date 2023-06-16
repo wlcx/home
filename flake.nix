@@ -86,7 +86,7 @@
     // (inputs.flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = overlays ++ [inputs.devshell.overlay];
+        overlays = overlays ++ [inputs.devshell.overlays.default];
       };
       platform = pkgs.lib.systems.elaborate system;
     in {

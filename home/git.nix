@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.git-open];
+  home.packages = with pkgs; [ git-open tea ];
   programs.git = {
     enable = true;
     userName = "Sam Willcocks";

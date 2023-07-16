@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   programs.gpg = {
     enable = true;
     mutableKeys = false;
@@ -19,6 +19,6 @@
     ];
     # make yubikey work on macos? lolgpg
     # https://github.com/NixOS/nixpkgs/issues/155629
-    scdaemonSettings = {disable-ccid = true;};
+    scdaemonSettings = (lib.optionalAttrs pkgs.stdenv.isDarwin {disable-ccid = true;});
   };
 }

@@ -21,4 +21,10 @@
     # https://github.com/NixOS/nixpkgs/issues/155629
     scdaemonSettings = (lib.optionalAttrs pkgs.stdenv.isDarwin {disable-ccid = true;});
   };
+
+  # Shouldn't have an effect on macos, on linux we need to specify a pinentry
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = "qt";  # for plasma
+  };
 }

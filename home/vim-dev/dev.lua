@@ -61,7 +61,7 @@ require'lspconfig'.pylsp.setup{
     ),
   }
 }
-require'lspconfig'.rnix.setup{
+require'lspconfig'.nil_ls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }

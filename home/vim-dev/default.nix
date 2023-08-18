@@ -4,6 +4,7 @@
   system,
   ...
 }: {
+  home.packages = with pkgs; [nil];
   programs.neovim.plugins = with pkgs.vimPlugins;
     [
       # More fancy shit

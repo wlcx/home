@@ -15,7 +15,7 @@ with pkgs; rec {
   ];
 
   # Networking shit
-  net = [iperf3 nmap socat tcpdump];
+  net = [dig iperf3 nmap socat tcpdump whois];
 
   # development tools
   dev = [jq nixfmt gh glab hexyl];

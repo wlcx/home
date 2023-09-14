@@ -24,7 +24,7 @@
 
   # Shouldn't have an effect on macos, on linux we need to specify a pinentry
   services.gpg-agent = {
-    enable = true;
+    enable = !pkgs.stdenv.isDarwin;
     enableSshSupport = true;
     pinentryFlavor = "qt";  # for plasma
   };

@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }: let
   packages = pkgs.callPackage ./packages.nix {};
@@ -53,6 +52,9 @@ in {
 
         # Don't honk at me constantly
         unsetopt beep
+      '';
+      envExtra = ''
+        export FZF_DEFAULT_COMMAND='${pkgs.fd}/bin/fd --type f --strip-cwd-prefix'
       '';
       enableSyntaxHighlighting = true;
       plugins = [

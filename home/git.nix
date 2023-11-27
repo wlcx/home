@@ -2,6 +2,7 @@
   home.packages = with pkgs; [ git-open tea ];
   programs.git = {
     enable = true;
+    lfs.enable = true;
     userName = "Sam Willcocks";
     userEmail = "sam@wlcx.cc";
 

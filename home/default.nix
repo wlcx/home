@@ -57,7 +57,7 @@ in {
       envExtra = ''
         export FZF_DEFAULT_COMMAND='${pkgs.fd}/bin/fd --type f --strip-cwd-prefix'
       '';
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       plugins = [
         {
           name = "fzf-tab";

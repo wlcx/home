@@ -37,6 +37,7 @@ in {
         g = "git";
         cat = "bat";
         ip = "ip --color=auto";
+        ns = "nix shell nixpkgs#";
         hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
         nrswitch = "nixos-rebuild --use-remote-sudo switch --flake '.#'";
         da = "direnv allow .";

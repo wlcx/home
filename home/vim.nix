@@ -3,7 +3,6 @@
 {
   pkgs,
   lib,
-  strings,
   ...
 }: {
   home.sessionVariables = lib.mkForce {"EDITOR" = "nvim";};

@@ -70,10 +70,7 @@ in {
       ];
     };
 
-    eza = {
-      enable = true;
-      enableAliases = true;
-    };
+    eza.enable = true;
 
     starship = {
       enable = true;

@@ -26,6 +26,6 @@
   services.gpg-agent = {
     enable = !pkgs.stdenv.isDarwin;
     enableSshSupport = true;
-    pinentryPackage = "qt";  # for plasma
+    pinentryPackage = pkgs.pinentry-all;
   };
 }

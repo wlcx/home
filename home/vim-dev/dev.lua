@@ -49,18 +49,7 @@ require'lspconfig'.gopls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
-require'lspconfig'.pylsp.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  handlers = {
-    ["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, {
-        -- Disable virtual_text
-        virtual_text = false
-      }
-    ),
-  }
-}
+require'lspconfig'.basedpyright.setup{}
 require'lspconfig'.nil_ls.setup{
   on_attach = on_attach,
   capabilities = capabilities,

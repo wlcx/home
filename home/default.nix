@@ -38,8 +38,10 @@ in {
         cat = "bat";
         ip = "ip --color=auto";
         ns = "nix shell nixpkgs#";
-        hmswitch = ''home-manager switch --flake ".#$(hostname -s)"'';
-        nrswitch = "nixos-rebuild --use-remote-sudo switch --flake '.#'";
+        hm = ''home-manager --flake ".#$(hostname -s)"'';
+        hms = ''home-manager --flake ".#$(hostname -s)" switch'';
+        nr = "nixos-rebuild --use-remote-sudo --flake '.#'";
+        nrs = "nixos-rebuild --use-remote-sudo --flake '.#' switch";
         da = "direnv allow .";
         dr = "direnv reload";
       };

@@ -10,6 +10,7 @@
   dev-gui = {...}: {
     imports = [./vscode.nix];
   };
+  tpmssh = ./tpmssh.nix;
   # Sensitive stuff
   sensitive = {...}: {
     imports = [

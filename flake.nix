@@ -19,9 +19,13 @@
   outputs = inputs: let
     overlays = [
       # Add our own local packages
-      (final: prev: rec {
+      (final: prev: {
         # Make my local packages available as pkgs.mypkgs.<foo>
         mypkgs = prev.callPackage ./pkgs {};
+      })
+      # more up to date ssh-tpm-agent. Can probably ditch this post-24.05
+      (final: prev: {
+        ssh-tpm-agent = (import inputs.nixpkgs-unstable { system = prev.system; }).ssh-tpm-agent;
       })
     ];
   in (rec {

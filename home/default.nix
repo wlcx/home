@@ -6,9 +6,8 @@
 in {
   home.packages = packages.all;
   home.sessionVariables = {
-    "PATH" = "$HOME/.local/bin:$PATH";
-    "EDITOR" = "vim";
-    "WORDCHARS" = "\${WORDCHARS//[\\/.=]/}"; # ctrl-w on paths without make angery
+    EDITOR = "vim"; # is overriden to nvim in vim.nix if needed 
+    WORDCHARS = "\${WORDCHARS//[\\/.=]/}"; # ctrl-w on paths without make angery
   };
   /*
   # For some reason this doesn't play nice when using home manager config from inside

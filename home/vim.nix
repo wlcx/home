@@ -5,7 +5,7 @@
   lib,
   ...
 }: {
-  home.sessionVariables = lib.mkForce {"EDITOR" = "nvim";};
+  home.sessionVariables.EDITOR = lib.mkForce "nvim";
   home.packages = with pkgs; [ripgrep];
   programs.neovim = {
     enable = true;

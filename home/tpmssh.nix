@@ -1,11 +1,11 @@
 # Enable tpm-ssh-agent in a systemd user service
-{pkgs, config, lib, ...}: {
+{pkgs, config, ...}: {
   home.packages = [ pkgs.ssh-tpm-agent ];
   home.sessionVariables = {
     SSH_AUTH_SOCK = "$(${pkgs.ssh-tpm-agent}/bin/ssh-tpm-agent --print-socket)";
   };
   systemd.user.sockets.ssh-tpm-agent = {
-    Unit.WantedBy = [ "sockets.target" ];
+    Install.WantedBy = [ "sockets.target" ];
     Socket = {
       ListenStream = "%t/ssh-tpm-agent.sock";
       SocketMode = "0600";

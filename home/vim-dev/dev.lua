@@ -97,7 +97,7 @@ require('go').setup()
 
 -- Diags with Trouble
 require('trouble').setup {
-  icons = false,
+  icons = {},
   signs = {
     error = "E",
     warning = "W",

@@ -39,13 +39,13 @@ in {
         ns = "nix shell nixpkgs#";
         hm = ''home-manager --flake ".#$(hostname -s)"'';
         hms = ''home-manager --flake ".#$(hostname -s)" switch'';
-        nr = "nixos-rebuild --use-remote-sudo --flake '.#'";
-        nrs = "nixos-rebuild --use-remote-sudo --flake '.#' switch";
+        nr = "nixos-rebuild --sudo --flake '.#'";
+        nrs = "nixos-rebuild --sudo --flake '.#' switch";
         da = "direnv allow .";
         dr = "direnv reload";
       };
       # Extra .zshrc stuff
-      initExtra = ''
+      initContent = ''
         # zstyle ':completion:*' menu select # fancy interactive autocomplete
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # tabcomplete lower to upper case
 
@@ -101,9 +101,11 @@ in {
     ssh = {
       enable = true;
       includes = ["~/.ssh/config.local"];
-      serverAliveInterval = 30;
-      serverAliveCountMax = 10;
-      matchBlocks."*".user = "samw";
+      matchBlocks."*" = {
+        user = "samw";
+        serverAliveInterval = 30;
+        serverAliveCountMax = 10;
+      };
     };
   };
 }

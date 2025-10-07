@@ -26,6 +26,6 @@
   services.gpg-agent = {
     enable = !pkgs.stdenv.isDarwin;
     enableSshSupport = true;
-    pinentryPackage = pkgs.pinentry-all;
+    pinentry.package = pkgs.pinentry-all;
   };
 }

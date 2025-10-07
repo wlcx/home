@@ -13,16 +13,17 @@ rec {
     unzip
     vim
     wget
+    helix
   ];
 
   # Networking shit
   net = [
     dig
     iperf3
+    mtr
     nmap
     socat
     tcpdump
-    whois
   ];
 
   # development tools
@@ -32,6 +33,7 @@ rec {
     gh
     glab
     hexyl
+    attic-client
   ];
 
   all = base ++ net ++ dev;

@@ -54,6 +54,10 @@ require'lspconfig'.nil_ls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
+require'lspconfig'.nixd.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 require'lspconfig'.rust_analyzer.setup{
   on_attach = on_attach,
   capabilities = capabilities,
@@ -69,6 +73,13 @@ require'lspconfig'.rust_analyzer.setup{
         end)
       end,
       description = 'Open documentation for the symbol under the cursor in default browser',
+    },
+  },
+  settings = {
+    ["rust-analyzer"] = {
+      procMacro = {
+        enable = false,
+      },
     },
   },
 }

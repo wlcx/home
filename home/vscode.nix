@@ -14,7 +14,9 @@
       "update.mode" = "none";
       "window.autoDetectColorScheme" = true;
       "workbench.preferredDarkColorTheme" = "Gruvbox Dark Hard";
+      "workbench.preferredLightColorTheme" = "Gruvbox Light Hard";
       "files.trimTrailingWhitespace" = true;
+      "emmet.includeLanguages"."django-html" = "html";
       # Don't try to write to the nix-managed .ssh/config
       "remote.SSH.configFile" = "~/.ssh/config.local";
       "editor.rulers" = [ 90 ];

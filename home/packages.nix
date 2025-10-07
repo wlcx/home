@@ -18,7 +18,7 @@ with pkgs; rec {
   net = [dig iperf3 nmap socat tcpdump whois];
 
   # development tools
-  dev = [jq nixfmt gh glab hexyl];
+  dev = [jq nixfmt gh glab hexyl helix];
 
   all = base ++ net ++ dev;
 }

@@ -80,6 +80,10 @@
           system = "x86_64-linux";
           profiles = with profiles; [default dev];
         };
+        phosphorus = lib.mkHome {
+          system = "aarch64-darwin";
+          profiles = with profiles; [default dev sensitive mac];
+        };
       };
     }
     # Per-system things

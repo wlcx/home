@@ -4,13 +4,13 @@
     enable = true;
     package = pkgs.vscodium;
     mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions; [
-      matklad.rust-analyzer
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      rust-lang.rust-analyzer
       jdinhlife.gruvbox
       jnoortheen.nix-ide
       editorconfig.editorconfig
     ];
-    userSettings = {
+    profiles.default.userSettings = {
       "update.mode" = "none";
       "window.autoDetectColorScheme" = true;
       "workbench.preferredDarkColorTheme" = "Gruvbox Dark Hard";

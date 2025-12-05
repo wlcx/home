@@ -55,9 +55,6 @@ in {
         # Don't honk at me constantly
         unsetopt beep
       '';
-      envExtra = ''
-        export FZF_DEFAULT_COMMAND='${pkgs.fd}/bin/fd --type f --strip-cwd-prefix'
-      '';
       syntaxHighlighting.enable = true;
       plugins = [
         {
@@ -95,7 +92,8 @@ in {
 
     fzf = {
       enable = true;
-      defaultCommand = "${pkgs.ripgrep}/bin/rg --files";
+      defaultCommand = "${pkgs.fd}/bin/fd --type f";
+      fileWidgetCommand = "${pkgs.fd}/bin/fd --type f";
     };
 
     ssh = {

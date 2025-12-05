@@ -1,5 +1,9 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [ git-open tea ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    git-open
+    tea
+  ];
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -9,7 +13,9 @@
     delta = {
       # Better diffs
       enable = true;
-      options = {line-numbers = true;};
+      options = {
+        line-numbers = true;
+      };
     };
 
     aliases = {
@@ -36,8 +42,7 @@
       sw = "switch";
       swc = "switch --create";
 
-      gone = ''
-        ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' │ awk '$2 == "[gone]" {print $1}' | xargs -r git branch -D'';
+      gone = ''! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' │ awk '$2 == "[gone]" {print $1}' | xargs -r git branch -D'';
     };
     extraConfig = {
       branch.sort = "-committerdate";

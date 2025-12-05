@@ -4,9 +4,10 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   home.sessionVariables.EDITOR = lib.mkForce "nvim";
-  home.packages = with pkgs; [ripgrep];
+  home.packages = with pkgs; [ ripgrep ];
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -26,7 +27,7 @@
       vim-gitgutter
       # More stuff idk
       emmet-vim
-      vim-sleuth # guess whitespace settings from file
+      vim-sleuth # guess whitespace settings from file
     ];
     extraConfig = ''
       lua <<EOF

@@ -1,5 +1,6 @@
-{pkgs}:
-with pkgs; rec {
+{ pkgs }:
+with pkgs;
+rec {
   # The stuff you want installed everywhere. The necessities.
   base = [
     bat # cat replacement, aliased to cat in home-manager
@@ -15,10 +16,23 @@ with pkgs; rec {
   ];
 
   # Networking shit
-  net = [dig iperf3 nmap socat tcpdump whois];
+  net = [
+    dig
+    iperf3
+    nmap
+    socat
+    tcpdump
+    whois
+  ];
 
   # development tools
-  dev = [jq nixfmt-rfc-style gh glab hexyl ];
+  dev = [
+    jq
+    nixfmt-rfc-style
+    gh
+    glab
+    hexyl
+  ];
 
   all = base ++ net ++ dev;
 }

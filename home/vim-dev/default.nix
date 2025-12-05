@@ -3,14 +3,16 @@
   lib,
   system,
   ...
-}: {
-  home.packages = with pkgs; [nil];
-  programs.neovim.plugins = with pkgs.vimPlugins;
+}:
+{
+  home.packages = with pkgs; [ nil ];
+  programs.neovim.plugins =
+    with pkgs.vimPlugins;
     [
       # More fancy shit
       nvim-treesitter
       trouble-nvim
-      # Language server/completions 
+      # Language server/completions
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
@@ -32,7 +34,7 @@
     ]
     # delve is unsupported on aarch64-linux and golangci-lint is broken on darwin
     # (see https://github.com/NixOS/nixpkgs/issues/168984).
-    ++ lib.optionals (system != "aarch64-linux" && !pkgs.stdenv.isDarwin) [vim-go];
+    ++ lib.optionals (system != "aarch64-linux" && !pkgs.stdenv.isDarwin) [ vim-go ];
   programs.neovim.extraConfig = ''
     lua <<EOF
         ${builtins.readFile ./dev.lua}

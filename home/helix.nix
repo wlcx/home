@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.helix = {
     enable = true;
     settings = {
@@ -8,20 +9,24 @@
     languages = {
       language-server.basedpyright = {
         command = "basedpyright-langserver";
-        args = ["--stdio"];
+        args = [ "--stdio" ];
       };
-      language = [{
-        name = "python";
-        roots = [
-          "pyproject.toml"
-          "setup.py"
-          "poetry.lock"
-          ".git"
-        ];
-        language-servers = [{
-          name = "basedpyright";
-        }];
-      }];
+      language = [
+        {
+          name = "python";
+          roots = [
+            "pyproject.toml"
+            "setup.py"
+            "poetry.lock"
+            ".git"
+          ];
+          language-servers = [
+            {
+              name = "basedpyright";
+            }
+          ];
+        }
+      ];
     };
   };
 }

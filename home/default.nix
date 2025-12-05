@@ -1,23 +1,25 @@
 {
   pkgs,
   ...
-}: let
-  packages = pkgs.callPackage ./packages.nix {};
-in {
+}:
+let
+  packages = pkgs.callPackage ./packages.nix { };
+in
+{
   home.packages = packages.all;
   home.sessionVariables = {
-    EDITOR = "vim"; # is overriden to nvim in vim.nix if needed 
+    EDITOR = "vim"; # is overriden to nvim in vim.nix if needed
     WORDCHARS = "\${WORDCHARS//[\\/.=]/}"; # ctrl-w on paths without make angery
   };
   /*
-  # For some reason this doesn't play nice when using home manager config from inside
-  # a nixos configuration.
-  nix = {
-    enable = true;
-    package = pkgs.nix;
-    settings.experimental-features = "nix-command flakes";
-    settings.max-jobs = "auto"; # Gotta go fast (build derivations in parallel)
-  };
+    # For some reason this doesn't play nice when using home manager config from inside
+    # a nixos configuration.
+    nix = {
+      enable = true;
+      package = pkgs.nix;
+      settings.experimental-features = "nix-command flakes";
+      settings.max-jobs = "auto"; # Gotta go fast (build derivations in parallel)
+    };
   */
   programs = {
     home-manager.enable = true;
@@ -77,7 +79,9 @@ in {
         format = "$username$hostname$shlvl$directory$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$docker_context$golang$kotlin$nodejs$python$rust$terraform$nix_shell$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$status$shell$character";
         username.format = "[$user]($style) ";
         hostname.format = "[$hostname]($style) ";
-        directory = {truncation_length = -1;};
+        directory = {
+          truncation_length = -1;
+        };
         git_branch.format = "[$symbol$branch]($style) ";
         python.format = "[py \${pyenv_prefix}(\${version} )(\\($virtualenv\\) )]($style)";
         nodejs.format = "[js ($version )]($style)";
@@ -98,7 +102,7 @@ in {
 
     ssh = {
       enable = true;
-      includes = ["~/.ssh/config.local"];
+      includes = [ "~/.ssh/config.local" ];
       matchBlocks."*" = {
         user = "samw";
         serverAliveInterval = 30;

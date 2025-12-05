@@ -3,7 +3,9 @@
   inputs = {
     # Nixpkgs
     nixpkgs = {
-      url = "github:nixos/nixpkgs/release-25.11";
+      # N.B. we use the nixos-x branch as this is updated *after* successful hydra builds
+      # rather than release-x. See https://wiki.nixos.org/wiki/Channel_branches
+      url = "github:nixos/nixpkgs/nixos-25.11";
     };
     nixpkgs-unstable = {
       url = "github:nixos/nixpkgs";
@@ -16,7 +18,6 @@
     flake-utils.url = "github:numtide/flake-utils";
     devshell = {
       url = "github:numtide/devshell";
-      inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -82,6 +83,11 @@
                       # level, so less duplication overall and no more fetching that 30MB src
                       # every time you run nix shell.
                       registry.nixpkgs.flake = inputs.nixpkgs;
+                      registry.nixpkgs-unstable.to = {
+                        owner = "nixos";
+                        repo = "nixpkgs";
+                        type = "github";
+                      };
                     };
                   }
                 )

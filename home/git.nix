@@ -47,6 +47,13 @@
       branch.sort = "-committerdate";
       push.default = "current";
       init.defaultBranch = "main";
+      merge = {
+        conflictStyle = "diff3";
+        mergiraf = {
+          name = "mergiraf";
+          driver = "${pkgs.mergiraf}/bin/mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L";
+        };
+      };
     };
     includes = [
       # Always include local gitconfig if it's there

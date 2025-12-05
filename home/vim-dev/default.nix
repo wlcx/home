@@ -5,7 +5,10 @@
   ...
 }:
 {
-  home.packages = with pkgs; [ nil nixd ];
+  home.packages = with pkgs; [
+    nil
+    nixd
+  ];
   programs.neovim.plugins =
     with pkgs.vimPlugins;
     [

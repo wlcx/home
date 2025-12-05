@@ -3,7 +3,7 @@
   default = ./default.nix;
   # A machine for development
   dev = {...}: {
-    imports = [./git.nix ./vim.nix ./vim-dev];
+    imports = [./git.nix ./vim.nix ./vim-dev ./helix.nix];
   };
   # A machine for dev with a GUI
   # TODO: detect this automatically somehow?

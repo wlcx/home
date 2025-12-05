@@ -3,14 +3,14 @@
   inputs = {
     # Nixpkgs
     nixpkgs = {
-      url = "github:nixos/nixpkgs/release-25.05";
+      url = "github:nixos/nixpkgs/release-25.11";
     };
     nixpkgs-unstable = {
       url = "github:nixos/nixpkgs";
     };
     # Other modules
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";

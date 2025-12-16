@@ -100,8 +100,9 @@ in
 
     fzf = {
       enable = true;
-      defaultCommand = "${pkgs.fd}/bin/fd --type f";
-      fileWidgetCommand = "${pkgs.fd}/bin/fd --type f";
+      # Include hidden files/folders (-H) but exclude .git
+      defaultCommand = "${pkgs.fd}/bin/fd -H --type f -E .git";
+      fileWidgetCommand = "${pkgs.fd}/bin/fd -H --type f -E .git";
     };
 
     ssh = {

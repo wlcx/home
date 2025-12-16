@@ -4,7 +4,18 @@
     enable = true;
     settings = {
       theme = "monokai_pro";
-      editor."soft-wrap".enable = true;
+      editor = {
+        "soft-wrap".enable = true;
+        "file-picker".hidden = false;  # Show hidden files (yes it's counter-intuitive)
+        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
+        whitespace.render = {
+          space = "none";
+          tab = "all";
+          nbsp = "all";
+          nnbsp = "all";
+          newline = "none";
+        };
+      };
     };
     languages = {
       language-server.basedpyright = {

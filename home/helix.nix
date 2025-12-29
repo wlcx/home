@@ -18,24 +18,18 @@
       };
     };
     languages = {
-      language-server.basedpyright = {
-        command = "basedpyright-langserver";
-        args = [ "--stdio" ];
+      language-server.rust-analyzer.config = {
+        # Don't get lost in .direnv etc and chew 100% cpu forever
+        files.excludeDirs = [
+          ".git"
+          ".cargo"
+          ".direnv"
+        ];
       };
       language = [
         {
           name = "python";
-          roots = [
-            "pyproject.toml"
-            "setup.py"
-            "poetry.lock"
-            ".git"
-          ];
-          language-servers = [
-            {
-              name = "basedpyright";
-            }
-          ];
+          language-servers = [ "ty" "basedpyright" ];
         }
       ];
     };

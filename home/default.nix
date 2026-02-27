@@ -107,11 +107,14 @@ in
 
     ssh = {
       enable = true;
+      enableDefaultConfig = false;
+      package = pkgs.openssh; # Use modern ssh
       includes = [ "~/.ssh/config.local" ];
       matchBlocks."*" = {
         user = "samw";
         serverAliveInterval = 30;
         serverAliveCountMax = 10;
+        compression = true;
       };
     };
   };

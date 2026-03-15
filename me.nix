@@ -5,5 +5,6 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIMvrgrLnE+AQBOBRiBoTFkbWaYTvqaBzIp4OfDiXUij"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDQdGzwYiallvWXIHgSAf2GOwMJKA8bxPmwyuO+vsd1HwB65hMRPCpKS+FNLIpkrADNnuhGS3xGCGSSuQ+zAu/g= zinc-se-main@secretive.zinc.local"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNLrJyUXmiFWb9vhlTWZLYr64IsKut+c9TGqq3/uwPDeF4X0Qb2jzxqXfQcDSztjR09JHbC8BOqfpYYT9LHahIo= YubiKey #13340583 PIV Slot 9a"
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBC/kJYueV9cBlyPsYhC0Q2HQR+E6MswwUF6hwXrkbb4JPNn9bD2PM2GjXQe0rz6KWPr4LYkbGTo9zbRQg3d2MTE= gallium-se-main@secretive.gallium.local"
   ];
 }

@@ -17,5 +17,5 @@
       "~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
   };
   programs.zsh.sessionVariables.SSH_AUTH_SOCK = "$HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh";
-  programs.zsh.initContent = "eval $(/opt/homebrew/bin/brew shellenv)";
+  programs.zsh.initContent = "[ -e /opt/homebrew/bin/brew ] && eval $(/opt/homebrew/bin/brew shellenv)";
 }

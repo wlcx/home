@@ -18,6 +18,26 @@
     { ... }:
     {
       imports = [ ./vscode.nix ];
+      programs.wezterm = {
+        enable = true;
+        extraConfig = ''
+          return {
+            color_scheme = "GruvboxDarkHard",
+            keys = {
+              {
+                key = 'd',
+                mods = 'SUPER',
+                action = wezterm.action.SplitVertical{domain='CurrentPaneDomain'},
+              },
+              {
+                key = 'D',
+                mods = 'SUPER | SHIFT',
+                action = wezterm.action.SplitHorizontal{domain='CurrentPaneDomain'},
+              },
+            },
+          }
+        '';
+      };
     };
   tpmssh = ./tpmssh.nix;
   # Sensitive stuff

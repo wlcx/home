@@ -10,6 +10,9 @@
     pngpaste
     mypkgs.qrclip
   ];
+  home.sessionPath = [
+    "/Applications/Sublime Merge.app/Contents/SharedSupport/bin"
+  ];
   # Use secretive for SSH agent
   programs.ssh.matchBlocks.all = lib.mkIf pkgs.stdenv.isDarwin {
     host = "*";

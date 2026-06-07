@@ -115,6 +115,10 @@
               dev
             ];
           };
+          kallax = lib.mkHome {
+            system = "x86_64-linux";
+            profiles = with profiles; [default dev];
+          };
           phosphorus = lib.mkHome {
             system = "aarch64-darwin";
             profiles = with profiles; [
